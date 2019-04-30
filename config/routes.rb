@@ -2,6 +2,7 @@
 # URLのリクエストを受けて、コントローラーに作業指示を行う場所です。
 Rails.application.routes.draw do
 
+  devise_for :users
 # ホーム画面関連
   get 'tweets' => 'tweets#index'         # ホーム画面の表示
 
