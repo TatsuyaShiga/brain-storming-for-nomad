@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
 # 新規投稿関連
   get 'tweets/new' => 'tweets#new'        # 新規投稿画面の表示
-  post '' => 'tweets#create'       # 新規投稿フォームの内容送信   これあってる？
+  post 'tweets' => 'tweets#create'       # 新規投稿フォームの内容送信   これあってる？
   
 # ログイン関連
   get 'login' => 'tweets#login'    # ログイン画面の表示

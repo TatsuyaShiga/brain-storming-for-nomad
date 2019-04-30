@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
   def create
     Tweet.create(text: params[:text])
   end
-  
+
 # ログイン関連
   def login    # ログイン画面の表示 をした際のアクション
   end
