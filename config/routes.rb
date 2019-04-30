@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'show' => 'tweets#show'      # 投稿個別表示画面の表示
   delete  'tweets/:id'  => 'tweets#destroy' # 投稿の削除
   post 'show' => 'tweets#show'     # 投稿の編集
-  
+
 # 確認応対用のサイトまっぷ
   get 'sitemap' => 'tweets#sitemap' # 全体の機能を確認する際に使います
 

@@ -38,12 +38,15 @@ class TweetsController < ApplicationController
 
 
 # 投稿の個別表示関連
+
   def show      # 投稿個別表示画面の表示
   end
-# 投稿の削除はどうやってやる？
 
-  def destroy
+  def destroy      # 投稿の削除
+    tweet = Tweet.find(params[:id])
+    tweet.destroy if tweet.user_id == current_user.id
   end
+
 # 投稿の編集はどうやってやる？
 
 
