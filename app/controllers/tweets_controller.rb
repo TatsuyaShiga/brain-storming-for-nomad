@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
   end
   
   def create  # 新規投稿フォームの内容送信 をした際のアクション
-    Tweet.create(text: params[:text])
+    Tweet.create(text: params[:text], user_id: current_user.id)
   end
 
 # ログイン関連
