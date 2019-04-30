@@ -14,8 +14,8 @@ class TweetsController < ApplicationController
 # ホーム画面関連
   def index
     @tweets = Tweet.all        # ホーム画面の表示 をした際のアクション
+# 全ツイートの投稿者を都度確認して重くなることを防ぐメソッド
   end
-
   
 # 会員登録関連
   def signin  # 会員登録画面の表示 をした際のアクション
@@ -27,11 +27,7 @@ class TweetsController < ApplicationController
   def new        # 新規投稿画面の表示 をした際のアクション
   end
   
-  # def create   # 新規投稿フォームの内容送信 をした際のアクション
-  # Tweet.create(text: params[:text]) 
-  # end
-  
-  def create
+  def create  # 新規投稿フォームの内容送信 をした際のアクション
     Tweet.create(text: params[:text])
   end
 
@@ -46,5 +42,9 @@ class TweetsController < ApplicationController
   end
 # 投稿の削除はどうやってやる？
 # 投稿の編集はどうやってやる？
+
+
+
+
 
 end

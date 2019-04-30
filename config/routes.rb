@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
 # 投稿の個別表示関連
   get 'show' => 'tweets#show'      # 投稿個別表示画面の表示
-  get 'show' => 'tweets#show'      # 投稿の削除              これあってる？
+  delete  'tweets/:id'  => 'tweets#destroy' # 投稿の削除
   post 'show' => 'tweets#show'     # 投稿の編集
   
 # 確認応対用のサイトまっぷ
