@@ -10,12 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
 
-<!--サイトのヘッダー(ナビゲーションなど)の部分-->
+<!--サイトの共通ヘッダー(ナビゲーションなど)の部分-->
     <header class="header">
     <div class="header__bar row">
-      <h1 class="grid-6"><a href="/">PicTweet</a></h1>
+      <h1 class="grid-6"><a href="/">Blog</a></h1>
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -29,6 +28,9 @@
       <% end %>
     </div>
   </header>
+
+<!--サイトの各ページごとの中身の部分-->
+    <%= yield %>
 
     
   </body>

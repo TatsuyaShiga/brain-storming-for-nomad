@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 
 # 未ログイン時は投稿画面に飛ばないようにする機能
 
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: %i[index sitemap]
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
