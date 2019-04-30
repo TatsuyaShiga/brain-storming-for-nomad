@@ -3,6 +3,14 @@
 class TweetsController < ApplicationController
 
 
+# 未ログイン時は投稿画面に飛ばないようにする機能
+
+  before_action :move_to_index, except: :index
+  
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+
 # ホーム画面関連
   def index
     @tweets = Tweet.all        # ホーム画面の表示 をした際のアクション
