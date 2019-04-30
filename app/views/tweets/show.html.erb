@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="content_post">
+
+<!--詳細画面は誰でも見られる-->
+    <%= @tweet.text %>
+
+<!--投稿者が詳細画面を開いさ際には編集と削除ボタンが現れる-->
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
+      <div class="more">
+        <ul class="more_list">
+          <ul>
+            <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
+          </ul>
+          <ul>
+            <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+          </ul>
+        </ul>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 
 # 未ログイン時は投稿画面に飛ばないようにする機能
 
-  before_action :move_to_index, except: %i[index sitemap]
+  before_action :move_to_index, except: %i[index show sitemap]
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
@@ -40,16 +40,24 @@ class TweetsController < ApplicationController
 # 投稿の個別表示関連
 
   def show      # 投稿個別表示画面の表示
+    @tweet = Tweet.find(params[:id])
+  end
+  
+  def edit      # 投稿の編集
+    @tweet = Tweet.find(params[:id])
+  end
+  
+  def update      # 投稿の編集後のアクション
+    tweet = Tweet.find(params[:id])
+    if tweet.user_id == current_user.id
+      tweet.update(text: params[:text])
+    end
   end
 
   def destroy      # 投稿の削除
     tweet = Tweet.find(params[:id])
     tweet.destroy if tweet.user_id == current_user.id
   end
-
-# 投稿の編集はどうやってやる？
-
-
 
 
 

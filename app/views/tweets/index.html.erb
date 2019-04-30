@@ -6,16 +6,31 @@
     <!--投稿内容の表示-->
     <p><%= tweet.text %></p>
 
-    <!--削除ボタンの表示-->
-    <% if user_signed_in? && current_user.id == tweet.user_id %>
-      <div class="more">
-          <ul class="more_list">
+    <!--オプション機能の表示-->
+    <div class="more">
+      <ul class="more_list">
+            
+          <!--全てのユーザーが見られる機能-->
+            <!--詳細ボタンの表示-->
+            <ul>
+              <%= link_to '詳細', "/tweets/#{tweet.id}", method: :get %>
+            </ul>
+            
+          <!--ユーザーが投稿したツイートのみを対象とする選別機能-->
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <!--編集ボタンの表示-->
+            <ul>
+              <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+            </ul>
+            <!--削除ボタンの表示-->
             <ul>
               <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
             </ul>
-          </ul>
-      </div>
-    <% end %>
+          <% end %>
+
+      </ul>
+    </div>
+
   <% end %>
 
 </div>
