@@ -1,8 +1,21 @@
 <div class="contents row" >
 
-<!--ツイートを順に表示する-->
+  <!--個々のツイートを表示する-->
   <% @tweets.each do |tweet| %>
+
+    <!--投稿内容の表示-->
     <p><%= tweet.text %></p>
+
+    <!--削除ボタンの表示-->
+    <% if user_signed_in? && current_user.id == tweet.user_id %>
+      <div class="more">
+          <ul class="more_list">
+            <ul>
+              <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+            </ul>
+          </ul>
+      </div>
+    <% end %>
   <% end %>
 
 </div>

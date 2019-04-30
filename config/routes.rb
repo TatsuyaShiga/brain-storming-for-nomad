@@ -27,5 +27,8 @@ Rails.application.routes.draw do
   
 # 確認応対用のサイトまっぷ
   get 'sitemap' => 'tweets#sitemap' # 全体の機能を確認する際に使います
-  
+
+#Mypageへのルーティング
+  get   'users/:id'   =>  'users#show'
+
 end

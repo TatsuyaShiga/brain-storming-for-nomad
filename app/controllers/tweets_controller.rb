@@ -41,6 +41,9 @@ class TweetsController < ApplicationController
   def show      # 投稿個別表示画面の表示
   end
 # 投稿の削除はどうやってやる？
+
+  def destroy
+  end
 # 投稿の編集はどうやってやる？
 
 
