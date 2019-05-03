@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
 
 # ホーム画面関連
   def index
-    @tweets = Tweet.all        # ホーム画面の表示 をした際のアクション
+    @tweets = Tweet.all.order('id DESC')        # ホーム画面の表示 をした際のアクション
 # 全ツイートの投稿者を都度確認して重くなることを防ぐメソッド
   end
   
@@ -29,12 +29,12 @@ class TweetsController < ApplicationController
   
   def create  # 新規投稿フォームの内容送信 をした際のアクション
     Tweet.create(text: params[:text], user_id: current_user.id)
+    redirect_to action: :index
   end
 
 # ログイン関連
   def login    # ログイン画面の表示 をした際のアクション
   end
-# ログインフォームの入力内容はどうやって飛ばす？
 
 
 # 投稿の個別表示関連
