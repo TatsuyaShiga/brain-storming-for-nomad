@@ -14,3 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+    <script>
+    function enter(){
+    if( window.event.keyCode == 13 ){
+    document.form1.submit();
+    }
+    }
+    </script>

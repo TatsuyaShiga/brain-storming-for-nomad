@@ -25,14 +25,17 @@
     <nav>
     <div class="nav-wrapper #80deea cyan lighten-3">
         <a href="/" class="brand-logo center">Brain Storming for Nomad</a>
-        <% if user_signed_in? %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <div class="user_nav grid-6">
+              <div class="user_nav grid-6">
+              <li><a class="get" href="/howtouse">使い方</a></li>
+              <!--</div>-->
+        <% if user_signed_in? %>
+            <!--<div class="user_nav grid-6">-->
               <li><a><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a></li>
               <li><a class="post" href="/tweets/new">投稿する</a></li>
-            </div>
+            <!--</div>-->
         <% else %>
-            <div class="grid-6">
+            <!--<div class="ggrid-6">-->
               <li><a><%= link_to "ログイン", new_user_session_path, class: 'post' %></a></li>
               <li><a><%= link_to "新規登録", new_user_registration_path, class: 'post' %></a></li>
             </div>

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 # ホーム画面関連
   get '' => 'tweets#index'                  # ホーム画面の表示
+  
+# 使い方画面関連
+  get 'howtouse' => 'tweets#howtouse'                  # ホーム画面の表示
 
 # 会員登録関連
   get 'signin' => 'tweets#signin'           # 会員登録画面の表示

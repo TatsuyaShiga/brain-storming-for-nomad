@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 
 # 未ログイン時は投稿画面に飛ばないようにする機能
 
-  before_action :move_to_index, except: %i[index show sitemap]
+  before_action :move_to_index, except: %i[index show howtouse]
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
@@ -16,11 +16,14 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.order('id DESC')        # ホーム画面の表示 をした際のアクション
 # 全ツイートの投稿者を都度確認して重くなることを防ぐメソッド
   end
+
+# 使い方画面
+  def howtouse
+  end
   
 # 会員登録関連
   def signin  # 会員登録画面の表示 をした際のアクション
   end
-# 会員登録フォームの入力内容はどうやって飛ばす？
 
 
 # 新規投稿関連

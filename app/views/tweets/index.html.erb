@@ -1,9 +1,32 @@
+<div class="square_card">
+    <!--投稿内容の表示-->
+    <div class="text_box">
+      <div id="idea_text">
+        <div class="flexiblebox">
+                <!--ユーザーが投稿したツイートのみを対象とする選別機能-->
+      <% if user_signed_in? %>
+        <!--投稿ボタンの表示-->
+        <%= link_to '新規投稿', "/tweets/new" %>
+        <% else %>
+        <!--新規会員登録を促す表示-->
+        <%= link_to "新規会員登録", new_user_registration_path, class: 'post' %>
+      <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 <!--個々のツイートを表示する-->
 <% @tweets.each do |tweet| %>
   <div class="square_card">
     <!--投稿内容の表示-->
     <div class="text_box">
-      <div id="idea_text"><p><%= tweet.text %></p></div>
+      <div id="idea_text">
+        <div class="flexiblebox">
+          <p><%= tweet.text %></p>
+        </div>
+      </div>
     </div>
     <!--オプション機能の表示-->
     <div class="card_functions">

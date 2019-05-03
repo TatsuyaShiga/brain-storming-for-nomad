@@ -32,19 +32,32 @@
   }
 }
 
-
   .text_box{
   margin: 1em;
   font-family: "游ゴシック", "YuGothic", "メイリオ", meiryo, sans-serif;
   font-size: 2vw;
   text-align: center;
+  font-weight: bolder;
+  color: #455a64;
   }
   
-
 .card_functions{
   margin:1em;
   position: absolute;
   bottom: 0;
+}
+
+.flexiblebox {
+ display: -webkit-flex;
+ display: flex;
+ -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+ align-items: center; /* 縦方向中央揃え */
+ -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+ justify-content: center; /* 横方向中央揃え */
+}
+
+.new_idea_bt{
+  text-size: 3vw;
 }
 
 // .card_functions{
